@@ -12,18 +12,15 @@ import java.util.List;
 public class CategoriaController {
 
     @Autowired
-    ICategoriaService service;
+    private ICategoriaService service;
 
-//    Categoria create(Categoria novaCategoria);
-//    Categoria update(Categoria categoria);
-//    List<Categoria> listAll();
-//    void remove(Integer id);
-
-    @PostMapping("/categoria")
+    @PostMapping("/categorias")
     public ResponseEntity<Categoria> create(@RequestBody Categoria categoria){
         try{
 
             Categoria result = service.create(categoria);
+
+            System.out.println("result " + result);
 
             if(result != null){
                 return ResponseEntity.status(201).body(result);
@@ -31,13 +28,13 @@ public class CategoriaController {
 
         }
         catch (Exception e){
-            System.out.println("LOG - Não foi possivél cria categoria");
+            System.out.println("LOG - Não foi possivél cria categoria" + e.getMessage());
         }
 
         return ResponseEntity.badRequest().build();
     }
 
-    @PutMapping("/categoria/{id}")
+    @PutMapping("/categorias/{id}")
     public ResponseEntity<Categoria> update(@RequestBody Categoria categoria, @PathVariable Integer id){
         categoria.setId(id);
         try{
@@ -56,9 +53,8 @@ public class CategoriaController {
         return ResponseEntity.badRequest().build();
     }
 
-    @GetMapping("/categoria/")
-    public ResponseEntity<List<Categoria>> listAll(@RequestBody Categoria categoria, @PathVariable Integer id){
-        categoria.setId(id);
+    @GetMapping("/categorias")
+    public ResponseEntity<List<Categoria>> listAll(){
         try{
 
             List<Categoria> result = service.listAll();
@@ -75,7 +71,7 @@ public class CategoriaController {
         return ResponseEntity.notFound().build();
     }
 
-    @DeleteMapping("/categoria/{id}")
+    @DeleteMapping("/categorias/{id}")
     public ResponseEntity<?> remove(@PathVariable Integer id){
         try{
 

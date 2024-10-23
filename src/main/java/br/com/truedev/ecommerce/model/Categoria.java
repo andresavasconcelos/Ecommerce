@@ -8,11 +8,11 @@ public class Categoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_categoria", nullable = false, unique = true)
+    @Column(name = "id_categoria")
     private Integer id;
 
-    @Column(name = "nome_categoria", nullable = false)
-    private String name;
+    @Column(name = "nome_categoria", length = 50, nullable = false)
+    private String nome;
 
     public Integer getId() {
         return id;
@@ -22,11 +22,11 @@ public class Categoria {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String name) {
+        this.nome = name;
     }
 }

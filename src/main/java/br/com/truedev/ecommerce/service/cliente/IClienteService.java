@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface IClienteService {
 
-    public Cliente cadastrarNovoCliente(Cliente novo);
-    public Cliente alterarCliete(Cliente cliente);
-    public Cliente recuperarClientePeloId(Integer id);
-    public Cliente recuperarClientePeloTelefone(String telefone);
-    public List<Cliente> recuperarTodosClintes();
+    Cliente cadastrarNovoCliente(Cliente novo);
+    Cliente alterarCliete(Cliente cliente);
+    Cliente recuperarClientePeloId(Integer id);
+    Cliente recuperarClientePeloTelefone(String telefone);
+    List<Cliente> recuperarTodosClintes();
 
 }
