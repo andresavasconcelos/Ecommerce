@@ -1,5 +1,7 @@
-package br.com.truedev.ecommerce.model;
+package br.com.truedev.ecommerce.model.produto;
 
+import br.com.truedev.ecommerce.model.variante.Variante;
+import br.com.truedev.ecommerce.model.categoria.Categoria;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -33,6 +35,9 @@ public class Produto {
             joinColumns = @JoinColumn(name = "id_produto"),
             inverseJoinColumns = @JoinColumn(name = "id_categoria"))
     private List<Categoria> categorias;
+
+    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
+    private List<Variante> variantes;
 
     public Integer getId() {
         return id;
@@ -88,5 +93,13 @@ public class Produto {
 
     public void setCategorias(List<Categoria> categorias) {
         this.categorias = categorias;
+    }
+
+    public List<Variante> getVariantes() {
+        return variantes;
+    }
+
+    public void setVariantes(List<Variante> variantes) {
+        this.variantes = variantes;
     }
 }

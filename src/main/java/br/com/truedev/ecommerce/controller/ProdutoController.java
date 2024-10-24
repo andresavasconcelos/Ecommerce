@@ -1,7 +1,8 @@
 package br.com.truedev.ecommerce.controller;
 
-import br.com.truedev.ecommerce.model.Produto;
-import br.com.truedev.ecommerce.service.cliente.IProdutoService;
+import br.com.truedev.ecommerce.model.categoria.Categoria;
+import br.com.truedev.ecommerce.model.produto.Produto;
+import br.com.truedev.ecommerce.service.produto.IProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +32,7 @@ public class ProdutoController {
     }
 
     @PutMapping("/produtos/{id}")
-    public ResponseEntity<Produto> create(Produto product, @PathVariable Integer id){
+    public ResponseEntity<Produto> update(Produto product, @PathVariable Integer id){
         product.setId(id);
         try {
 
@@ -79,8 +80,6 @@ public class ProdutoController {
         return ResponseEntity.notFound().build();
     }
 
-
-
     @GetMapping("/produtos/{id}")
     public ResponseEntity<Produto> getProductById(@PathVariable Integer id){
         try {
@@ -93,6 +92,23 @@ public class ProdutoController {
 
         }catch (Exception e){
             System.out.println("Não foi possível consultar produtos " + e.getMessage());
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/produtos/categoria/{id}")
+    public ResponseEntity<List<Produto>> getProductCategoriaById(@PathVariable Integer id){
+        try {
+            Categoria categoria = new Categoria();
+            categoria.setId(id);
+            List<Produto> catProduto = service.findByCategoriasContaining(categoria);
+
+            if(catProduto != null){
+                return ResponseEntity.ok(catProduto);
+            }
+
+        }catch (Exception e){
+            System.out.println("Não foi possível consultar categoria do produto " + e.getMessage());
         }
         return ResponseEntity.notFound().build();
     }

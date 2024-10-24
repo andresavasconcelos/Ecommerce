@@ -1,7 +1,7 @@
 package br.com.truedev.ecommerce.dao;
 
-import br.com.truedev.ecommerce.model.Categoria;
-import br.com.truedev.ecommerce.model.Produto;
+import br.com.truedev.ecommerce.model.categoria.Categoria;
+import br.com.truedev.ecommerce.model.produto.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

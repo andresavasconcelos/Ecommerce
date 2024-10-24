@@ -1,6 +1,6 @@
 package br.com.truedev.ecommerce.service.cliente;
 
-import br.com.truedev.ecommerce.model.Cliente;
+import br.com.truedev.ecommerce.model.cliente.Cliente;
 
 import java.util.List;
 

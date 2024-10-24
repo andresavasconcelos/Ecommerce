@@ -1,7 +1,7 @@
 package br.com.truedev.ecommerce.controller;
 
-import br.com.truedev.ecommerce.model.Categoria;
-import br.com.truedev.ecommerce.service.cliente.ICategoriaService;
+import br.com.truedev.ecommerce.model.categoria.Categoria;
+import br.com.truedev.ecommerce.service.categoria.ICategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

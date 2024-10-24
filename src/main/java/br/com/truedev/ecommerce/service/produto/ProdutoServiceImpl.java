@@ -1,7 +1,8 @@
-package br.com.truedev.ecommerce.service.cliente;
+package br.com.truedev.ecommerce.service.produto;
 
 import br.com.truedev.ecommerce.dao.ProdutoDAO;
-import br.com.truedev.ecommerce.model.Produto;
+import br.com.truedev.ecommerce.model.categoria.Categoria;
+import br.com.truedev.ecommerce.model.produto.Produto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -36,5 +37,10 @@ public class ProdutoServiceImpl implements IProdutoService{
     @Override
     public Produto findById(Integer id) {
         return produtoDAO.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Produto> findByCategoriasContaining(Categoria categoria) {
+        return produtoDAO.findByCategoriasContaining(categoria);
     }
 }

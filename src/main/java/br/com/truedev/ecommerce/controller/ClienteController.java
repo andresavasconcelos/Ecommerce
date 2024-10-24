@@ -1,15 +1,12 @@
 package br.com.truedev.ecommerce.controller;
 
-import br.com.truedev.ecommerce.model.Cliente;
-import br.com.truedev.ecommerce.service.cliente.ClienteServiceImpl;
+import br.com.truedev.ecommerce.model.cliente.Cliente;
 import br.com.truedev.ecommerce.service.cliente.IClienteService;
-import ch.qos.logback.core.net.SyslogOutputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 @RestController
 public class ClienteController {

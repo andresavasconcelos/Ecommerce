@@ -1,4 +1,4 @@
-package br.com.truedev.ecommerce.model;
+package br.com.truedev.ecommerce.model.categoria;
 
 import jakarta.persistence.*;
 

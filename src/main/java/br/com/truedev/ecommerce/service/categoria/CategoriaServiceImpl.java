@@ -1,7 +1,7 @@
-package br.com.truedev.ecommerce.service.cliente;
+package br.com.truedev.ecommerce.service.categoria;
 
 import br.com.truedev.ecommerce.dao.CategoriaDAO;
-import br.com.truedev.ecommerce.model.Categoria;
+import br.com.truedev.ecommerce.model.categoria.Categoria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
