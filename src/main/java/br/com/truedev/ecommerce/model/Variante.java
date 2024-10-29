@@ -1,6 +1,6 @@
-package br.com.truedev.ecommerce.model.variante;
+package br.com.truedev.ecommerce.model;
 
-import br.com.truedev.ecommerce.model.produto.Produto;
+import br.com.truedev.ecommerce.model.Produto;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,17 +12,17 @@ public class Variante {
     @Column(name = "id_variante")
     private Integer id;
 
-    @Column(name = "nome", length = 45, nullable = false)
+    @Column(name = "nome_variante", length = 45, nullable = false)
     private String nome;
 
-    @Column(name = "descricao", columnDefinition = "TEXT")
+    @Column(name = "descricao_variante", columnDefinition = "TEXT")
     private String descricao;
 
     @Column(name = "link_foto", length = 255)
     private String linkFoto;
 
     @ManyToOne
-    @JoinColumn(name = "tbl_produto_id_poduto")
+    @JoinColumn(name = "tbl_produto_id_produto")
     private Produto produto;
 
     public Integer getId() {

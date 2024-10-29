@@ -1,6 +1,6 @@
 package br.com.truedev.ecommerce.dao;
 
-import br.com.truedev.ecommerce.model.categoria.Categoria;
+import br.com.truedev.ecommerce.model.Categoria;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

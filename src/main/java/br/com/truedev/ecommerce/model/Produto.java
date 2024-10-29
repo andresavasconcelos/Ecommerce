@@ -1,7 +1,5 @@
-package br.com.truedev.ecommerce.model.produto;
+package br.com.truedev.ecommerce.model;
 
-import br.com.truedev.ecommerce.model.variante.Variante;
-import br.com.truedev.ecommerce.model.categoria.Categoria;
 import jakarta.persistence.*;
 
 import java.util.List;

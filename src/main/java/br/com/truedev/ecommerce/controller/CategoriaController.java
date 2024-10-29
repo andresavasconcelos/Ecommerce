@@ -1,6 +1,6 @@
 package br.com.truedev.ecommerce.controller;
 
-import br.com.truedev.ecommerce.model.categoria.Categoria;
+import br.com.truedev.ecommerce.model.Categoria;
 import br.com.truedev.ecommerce.service.categoria.ICategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +19,6 @@ public class CategoriaController {
         try{
 
             Categoria result = service.create(categoria);
-
-            System.out.println("result " + result);
 
             if(result != null){
                 return ResponseEntity.status(201).body(result);

@@ -1,7 +1,7 @@
 package br.com.truedev.ecommerce.dao;
 
-import br.com.truedev.ecommerce.model.produto.Produto;
-import br.com.truedev.ecommerce.model.variante.Variante;
+import br.com.truedev.ecommerce.model.Produto;
+import br.com.truedev.ecommerce.model.Variante;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

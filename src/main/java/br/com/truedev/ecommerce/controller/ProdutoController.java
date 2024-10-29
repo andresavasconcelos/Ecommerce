@@ -1,9 +1,10 @@
 package br.com.truedev.ecommerce.controller;
 
-import br.com.truedev.ecommerce.model.categoria.Categoria;
-import br.com.truedev.ecommerce.model.produto.Produto;
+import br.com.truedev.ecommerce.model.Categoria;
+import br.com.truedev.ecommerce.model.Produto;
 import br.com.truedev.ecommerce.service.produto.IProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,10 +50,10 @@ public class ProdutoController {
     }
 
     @GetMapping("/produtos")
-    public ResponseEntity<List<Produto>> listAll(){
+    public ResponseEntity<Page<Produto>> listAll(@RequestParam(name = "p", defaultValue = "1") int p){
         try {
 
-            List<Produto> produtos = service.listAll();
+            Page<Produto> produtos = service.listAll(p);
 
             if(produtos != null){
                 return ResponseEntity.ok(produtos);
@@ -68,7 +69,7 @@ public class ProdutoController {
     public ResponseEntity<List<Produto>> listAllByWord(@RequestParam(name = "palavra") String word){
         try {
 
-            List<Produto> produtos = service.listAll();
+            List<Produto> produtos = service.listAllByWord(word);
 
             if(produtos != null){
                 return ResponseEntity.ok(produtos);

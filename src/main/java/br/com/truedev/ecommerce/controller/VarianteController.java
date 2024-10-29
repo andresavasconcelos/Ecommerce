@@ -1,7 +1,7 @@
 package br.com.truedev.ecommerce.controller;
 
-import br.com.truedev.ecommerce.model.produto.Produto;
-import br.com.truedev.ecommerce.model.variante.Variante;
+import br.com.truedev.ecommerce.model.Produto;
+import br.com.truedev.ecommerce.model.Variante;
 import br.com.truedev.ecommerce.service.variante.IVarianteService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

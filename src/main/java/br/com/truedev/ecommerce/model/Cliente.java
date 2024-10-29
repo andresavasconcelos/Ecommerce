@@ -1,4 +1,4 @@
-package br.com.truedev.ecommerce.model.cliente;
+package br.com.truedev.ecommerce.model;
 
 import jakarta.persistence.*;
 

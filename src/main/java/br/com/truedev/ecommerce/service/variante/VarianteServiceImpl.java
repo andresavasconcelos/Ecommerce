@@ -1,8 +1,8 @@
 package br.com.truedev.ecommerce.service.variante;
 
 import br.com.truedev.ecommerce.dao.VarianteDAO;
-import br.com.truedev.ecommerce.model.produto.Produto;
-import br.com.truedev.ecommerce.model.variante.Variante;
+import br.com.truedev.ecommerce.model.Produto;
+import br.com.truedev.ecommerce.model.Variante;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

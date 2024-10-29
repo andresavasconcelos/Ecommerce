@@ -1,7 +1,7 @@
 package br.com.truedev.ecommerce.service.cliente;
 
 import br.com.truedev.ecommerce.dao.ClienteDAO;
-import br.com.truedev.ecommerce.model.cliente.Cliente;
+import br.com.truedev.ecommerce.model.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
