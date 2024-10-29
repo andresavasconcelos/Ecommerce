@@ -12,10 +12,11 @@ public interface PedidoDAO extends CrudRepository <Pedido, Integer>{
 
     List<Pedido> findAllByStatus(Integer status);
 
-    @Query("SELECT new"
-    + "br.com.truedev.ecommerce.dto.FaturamentoMensal(month(p.dataPedido), sum(p.valorTotal)"
-    + "FROM Pedido p"
-    + "WHERE year(p.dataPedido) = :ano"
-    + "GROUP BY month(p.dataPedido)")
+    /* criando uma query customizada para recuperar faturamento */
+    @Query("SELECT new "
+            + " br.com.truedev.ecommerce.dto.FaturamentoMensal(month(p.datePedido), sum(p.valorTotal)) "
+            + " FROM Pedido p "
+            + " WHERE year(p.datePedido) = :ano "
+            + " GROUP BY month(p.datePedido) ")
     public List<FaturamentoMensal> getFat(@Param("ano") Integer ano);
 }
