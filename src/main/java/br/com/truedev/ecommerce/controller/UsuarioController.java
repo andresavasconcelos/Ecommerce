@@ -14,7 +14,7 @@ public class UsuarioController {
     @Autowired
     private IUsuarioService service;
 
-    @PostMapping("/usuario")
+    @PostMapping("/usuarios")
     public ResponseEntity<Usuario> create(@RequestBody Usuario user){
         try{
 
@@ -30,7 +30,7 @@ public class UsuarioController {
         return ResponseEntity.badRequest().build();
     }
 
-    @PutMapping("/usuario/{id}")
+    @PutMapping("/usuarios/{id}")
     public ResponseEntity<Usuario> update(@RequestBody Usuario user, @RequestParam Integer id){
         try{
             user.setId(id);
@@ -50,15 +50,17 @@ public class UsuarioController {
     public ResponseEntity<ECToken> doLogin(@RequestBody Usuario usuario){
         try{
 
-            ECToken resp = service.doLogin(usuario);
+            ECToken token = service.doLogin(usuario);
 
-            if(resp != null)
-                return ResponseEntity.ok(resp);
+            System.out.println("token: " + token);
+
+            if(token != null)
+                return ResponseEntity.ok(token);
 
         } catch (Exception e){
             System.out.println("Não foi possível consultar usuario " + e.getMessage());
         }
 
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.status(403).build();
     }
 }

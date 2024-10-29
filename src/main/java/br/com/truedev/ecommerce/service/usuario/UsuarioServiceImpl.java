@@ -33,13 +33,22 @@ public class UsuarioServiceImpl implements IUsuarioService{
 
     @Override
     public ECToken doLogin(Usuario usuario){
+        System.out.println("login: " + usuario.getLogin());
+        System.out.println("senha: " + usuario.getSenha());
+        System.out.println(" ");
+        System.out.println("//////////");
+        System.out.println(" ");
+
         Usuario user = usuarioDAO.findByLogin(usuario.getLogin());
+
+        System.out.println("user: " + user.getLogin());
+        System.out.println("senha: " + user.getSenha());
 
         if (user != null) {
             BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-            if(encoder.matches(user.getSenha(), user.getSenha())){
-//                return ECTokenUtil.generateToken(user);
-            }
+            if(encoder.matches(usuario.getSenha(), user.getSenha()))
+                return ECTokenUtil.generateToken(user);
+
         }
 
 

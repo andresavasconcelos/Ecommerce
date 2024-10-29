@@ -1,5 +1,6 @@
 package br.com.truedev.ecommerce.controller;
 
+import br.com.truedev.ecommerce.dto.FaturamentoMensal;
 import br.com.truedev.ecommerce.model.Pedido;
 import br.com.truedev.ecommerce.service.pedido.IPedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -100,6 +101,24 @@ public class PedidoController {
         }
         catch (Exception e){
             System.out.println("LOG - Não foi possivél pesquisar pedido pelo status");
+        }
+
+        return ResponseEntity.badRequest().build();
+    }
+
+    @GetMapping("/pedidos/faturamento/{ano}")
+    public ResponseEntity<List<FaturamentoMensal>> getFatsss(@PathVariable Integer ano){
+        try{
+
+            List<FaturamentoMensal> result = service.getFat(ano);
+
+            if(result != null){
+                return ResponseEntity.ok(result);
+            }
+
+        }
+        catch (Exception e){
+            System.out.println("LOG - Não foi possivél recuperara faturamento");
         }
 
         return ResponseEntity.badRequest().build();
